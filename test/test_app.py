@@ -10,23 +10,28 @@ class TestApp(unittest.TestCase):
 
     def test_counting_valleys(self):
         """
-        UDDDUDUU
-
-        _/\      _
+        _/\_______
            \    /
             \/\/
         """
         valleys1 = 'UDDDUDUU'
         self.assertEqual(counting_valleys(s=valleys1), 1)
+
+        """
+        __________
+        \/\      /
+           \  /\/
+            \/        
+        """
         valleys2 = 'DDUUDDUDUUUD'
         self.assertEqual(counting_valleys(s=valleys2), 2)
 
-
         """
         UDUUUDUDDD
+
              /\/\
             /    \
-        _/\/      \
+        _/\/______\
         """
-        # hills_valleys2 = 'UDUUUDUDDD'
-        # self.assertEqual(counting_valleys(n=42, s=hills_valleys2), 0)
+        valleys3 = 'UDUUUDUDDD'
+        self.assertEqual(counting_valleys(s=valleys3), 0)
