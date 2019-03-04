@@ -3,7 +3,7 @@ https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges
 """
 
 
-def sock_merchant(n, ar):
+def sock_merchant(ar):
     """
     sample input:
     n - 9
@@ -23,3 +23,16 @@ def sock_merchant(n, ar):
             tally += 1
             pairs.update({el: 0})
     return tally
+
+
+def counting_valleys(s):
+    toggle = False
+    counter = 0
+    for i, v in list(enumerate(s)):
+        if i == len(s)-1:
+            return counter
+        if v != s[i + 1]:
+            toggle = False
+        if v == s[i+1] and toggle is False and v == 'D':
+            toggle = True
+            counter += 1
