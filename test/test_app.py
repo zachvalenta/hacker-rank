@@ -35,3 +35,12 @@ class TestApp(unittest.TestCase):
         """
         valleys3 = 'UDUUUDUDDD'
         self.assertEqual(counting_valleys(s=valleys3), 0)
+
+        """
+        __________________
+        \/\      /
+           \  /\/
+            \/
+        """
+        valleys4 = 'DUDDDUUDUU'
+        self.assertEqual(counting_valleys(s=valleys4), 2)

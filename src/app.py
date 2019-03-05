@@ -30,14 +30,14 @@ def counting_valleys(s):
     scratch the phrase 'consecutive steps' from the problem statement
     you only care if you go below sea level and come back up again
     """
-    toggle = False
-    counter = 0
+    sea_level = 0
+    valleys = 0
     for i, v in list(enumerate(s)):
-        if i == len(s)-1:
-            return counter
-        if v == s[i+1] and toggle is False and v == 'D':
-            toggle = True
-        if v != s[i + 1] and toggle is True:
-            counter += 1
-        if v != s[i + 1]:
-            toggle = False
+        current_sea_level = sea_level
+        if v == 'U':
+            sea_level += 1
+        else:
+            sea_level -= 1
+        if current_sea_level == 0 and sea_level < 0:
+            valleys += 1
+    return valleys
