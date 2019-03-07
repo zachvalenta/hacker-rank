@@ -1,5 +1,5 @@
 import unittest
-from src.app import sock_merchant, counting_valleys
+from src.app import counting_valleys, jump_clouds, sock_merchant
 
 
 class TestApp(unittest.TestCase):
@@ -44,3 +44,9 @@ class TestApp(unittest.TestCase):
         """
         valleys4 = 'DUDDDUUDUU'
         self.assertEqual(counting_valleys(s=valleys4), 2)
+
+    def test_jump_clouds(self):
+        self.assertEqual(jump_clouds([0, 0, 0, 1, 0, 0]), 3)
+        self.assertEqual(jump_clouds([0, 1, 0, 0, 0, 1, 0]), 3)
+        self.assertEqual(jump_clouds([0, 0, 1, 0, 0, 1, 0]), 4)
+
