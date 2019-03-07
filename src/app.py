@@ -3,28 +3,6 @@ https://www.hackerrank.com/interview/interview-preparation-kit/warmup/challenges
 """
 
 
-def sock_merchant(ar):
-    """
-    sample input:
-    n - 9
-    ar - 10, 20, 20, 10, 10, 30, 50, 10, 20
-
-    sample output:
-    3
-    """
-    pairs = dict()
-    tally = 0
-    for el in ar:
-        if el not in pairs:
-            pairs[el] = 1
-        else:
-            pairs.update({el: pairs[el]+1})
-        if pairs[el] == 2:
-            tally += 1
-            pairs.update({el: 0})
-    return tally
-
-
 def counting_valleys(s):
     """
     * count number of time you go below and then return to sea level
@@ -68,3 +46,25 @@ def jump_clouds(c):
             jumps += 1
             index += 1
     return jumps
+
+
+def sock_merchant(ar):
+    """
+    sample input:
+    n - 9
+    ar - 10, 20, 20, 10, 10, 30, 50, 10, 20
+
+    sample output:
+    3
+    """
+    pairs = dict()
+    tally = 0
+    for el in ar:
+        if el not in pairs:
+            pairs[el] = 1
+        else:
+            pairs.update({el: pairs[el]+1})
+        if pairs[el] == 2:
+            tally += 1
+            pairs.update({el: 0})
+    return tally

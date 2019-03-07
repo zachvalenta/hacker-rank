@@ -4,10 +4,6 @@ from src.app import counting_valleys, jump_clouds, sock_merchant
 
 class TestApp(unittest.TestCase):
 
-    def test_sock_merchant(self):
-        potential_pairs = [10, 20, 20, 10, 10, 30, 50, 10, 20]
-        self.assertEqual(sock_merchant(ar=potential_pairs), 3)
-
     def test_counting_valleys(self):
         """
         _/\_______
@@ -50,3 +46,6 @@ class TestApp(unittest.TestCase):
         self.assertEqual(jump_clouds([0, 1, 0, 0, 0, 1, 0]), 3)
         self.assertEqual(jump_clouds([0, 0, 1, 0, 0, 1, 0]), 4)
 
+    def test_sock_merchant(self):
+        potential_pairs = [10, 20, 20, 10, 10, 30, 50, 10, 20]
+        self.assertEqual(sock_merchant(ar=potential_pairs), 3)
