@@ -1,5 +1,5 @@
 import unittest
-from src.app import counting_valleys, jump_clouds, sock_merchant
+from src.warmup import counting_valleys, jump_clouds, sock_merchant
 
 
 class TestApp(unittest.TestCase):
