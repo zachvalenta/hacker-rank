@@ -63,7 +63,7 @@ def sock_merchant(ar):
         if el not in pairs:
             pairs[el] = 1
         else:
-            pairs.update({el: pairs[el]+1})
+            pairs.update({el: pairs[el] + 1})
         if pairs[el] == 2:
             tally += 1
             pairs.update({el: 0})

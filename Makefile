@@ -19,7 +19,7 @@ cov:test
 	coverage html; open htmlcov/index.html
 
 lint:
-	flake8 src
+	flake8 src test
 
 pipfr:
 	pip freeze > requirements.txt

@@ -17,7 +17,7 @@ class TestApp(unittest.TestCase):
         __________
         \/\      /
            \  /\/
-            \/        
+            \/
         """
         valleys2 = 'DDUUDDUDUUUD'
         self.assertEqual(counting_valleys(s=valleys2), 2)
