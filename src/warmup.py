@@ -48,6 +48,13 @@ def jump_clouds(c):
     return jumps
 
 
+def repeated_string(s, n):
+    whole = n // len(s)
+    remainder = n % len(s)
+    base_count = whole * s.count('a')
+    return base_count + s[:remainder].count('a')
+
+
 def sock_merchant(ar):
     """
     sample input:

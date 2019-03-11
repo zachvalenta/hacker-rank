@@ -1,5 +1,6 @@
 import unittest
-from src.warmup import counting_valleys, jump_clouds, sock_merchant
+from src.warmup import counting_valleys, jump_clouds, repeated_string,\
+    sock_merchant
 
 
 class TestApp(unittest.TestCase):
@@ -45,6 +46,11 @@ class TestApp(unittest.TestCase):
         self.assertEqual(jump_clouds([0, 0, 0, 1, 0, 0]), 3)
         self.assertEqual(jump_clouds([0, 1, 0, 0, 0, 1, 0]), 3)
         self.assertEqual(jump_clouds([0, 0, 1, 0, 0, 1, 0]), 4)
+
+    def test_repeated_string(self):
+        self.assertEqual(repeated_string(s='aba', n=10), 7)
+        self.assertEqual(repeated_string(s='a', n=1000000000000), 1000000000000)
+        self.assertEqual(repeated_string(s='aab', n=882787), 588525)
 
     def test_sock_merchant(self):
         potential_pairs = [10, 20, 20, 10, 10, 30, 50, 10, 20]
