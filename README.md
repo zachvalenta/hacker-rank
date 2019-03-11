@@ -2,7 +2,7 @@
 
 * my working through of some Hacker Rank problems
 
-_Hacker Rank particularities_
+# Hacker Rank particularities
 
 * stdlib restricted to `math`, `os`, `random`, `re`, `sys`
 * occasional violations of PEP 8 (functions in camel case)
