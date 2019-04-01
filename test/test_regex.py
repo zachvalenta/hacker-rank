@@ -5,6 +5,14 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_caputure_group():
+    """
+    'ok' 3 or more times
+    """
+    regex = '(ok){3,}'
+    assert re.search(regex, 'okokok! cya') is not None
+
+
 def test_range():
     """
     string length >= 5
