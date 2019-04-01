@@ -5,6 +5,12 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_uk_telephone_num():
+    regex = '^\d{11}$'
+    assert re.search(regex, '12345678901') is not None
+    assert re.search(regex, '6101234567') is None
+
+
 def test_caputure_group():
     """
     'ok' 3 or more times
