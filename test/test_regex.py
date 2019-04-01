@@ -5,6 +5,14 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_match_specific_char():
+    """
+    this prompt is too inane to bother enumerating
+    """
+    regex = '^[1-3][0-2][x|s|0][a|A|0|3][x|s|u][\.|,]$'
+    assert re.search(regex, '1203x.') is not None
+
+
 def test_matching_start_end():
     """
     anything in the format Dwwwww.
