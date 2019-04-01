@@ -5,8 +5,15 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_matching_start_end():
+    """
+    anything in the format Dwwwww.
+    """
+    regex = '^\d\w{4}\.$'
+    assert re.search(regex, '0qwer.') is not None
+
+
 def test_word_and_non_word():
-    pass
     """
     anything in the format xxxXxxxxxxxxxxXxxx
     """
@@ -27,7 +34,6 @@ def test_digits_and_non_digits():
     """
     anything in the format ddDddDdddd
     """
-    # regex = '\d\d\D\d\d\D\d\d\d\d'
     regex = '\d{2}\D\d{2}\D\d{4}'
     assert re.search(regex, '06-11-2015') is not None
 
