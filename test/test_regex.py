@@ -5,12 +5,21 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_word_and_non_word():
+    pass
+    """
+    anything in the format xxxXxxxxxxxxxxXxxx
+    """
+    regex = '\w{3}\W\w{10}\W\w{3}'
+    assert re.search(regex, 'www.hackerrank.com') is not None
+
+
 def test_whitespace_and_non_whitespace():
     pass
     """
     anything in the format XXxXXxXX
     """
-    regex = '\S\S\s\S\S\s\S\S'
+    regex = '\S{2}\s\S{2}\s\S{2}'
     assert re.search(regex, '12 11 15') is not None
 
 
@@ -18,7 +27,8 @@ def test_digits_and_non_digits():
     """
     anything in the format ddDddDdddd
     """
-    regex = '\d\d\D\d\d\D\d\d\d\d'
+    # regex = '\d\d\D\d\d\D\d\d\d\d'
+    regex = '\d{2}\D\d{2}\D\d{4}'
     assert re.search(regex, '06-11-2015') is not None
 
 
