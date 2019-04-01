@@ -5,6 +5,19 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_range():
+    """
+    string length >= 5
+    1 - lowercase letter
+    2 - positive num
+    3 - not a lowercase letter
+    4 - not a uppercase letter
+    5 - uppercase letter
+    """
+    regex = '^[a-z][1-9][^a-z][^A-Z][A-Z]'
+    assert re.search(regex, 'h4CkR') is not None
+
+
 def test_exclude_specific_char():
     """
     1 - no digits
