@@ -5,6 +5,19 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_exclude_specific_char():
+    """
+    1 - no digits
+    2 - no lowercase vowels
+    3 - not b, c, D, F
+    4 - no whitespace char
+    5 - no uppercase vowels
+    6 - neither . nor ,
+    """
+    regex = '^[^\d][^aeiou][^bcDF][^\s][^AEIOU][^\.\,]$'
+    assert re.search(regex, 'think?') is not None
+
+
 def test_match_specific_char():
     """
     this prompt is too inane to bother enumerating
