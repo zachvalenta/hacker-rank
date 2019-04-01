@@ -5,12 +5,21 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_whitespace_and_non_whitespace():
+    pass
+    """
+    anything in the format XXxXXxXX
+    """
+    regex = '\S\S\s\S\S\s\S\S'
+    assert re.search(regex, '12 11 15') is not None
+
+
 def test_digits_and_non_digits():
     """
     anything in the format ddDddDdddd
     """
     regex = '\d\d\D\d\d\D\d\d\d\d'
-    assert re.match(regex, '06-11-2015') is not None
+    assert re.search(regex, '06-11-2015') is not None
 
 
 def test_any_but_newline():
