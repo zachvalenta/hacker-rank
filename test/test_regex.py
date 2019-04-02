@@ -5,6 +5,13 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_honorific():
+    regex = '^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$'
+    assert re.search(regex, 'Mr.DOSHI') is not None
+    assert re.search(regex, 'Mr.V.K. Doshi') is None
+    assert re.search(regex, 'Ms._underscore') is None
+
+
 def test_uk_telephone_num():
     regex = '^\d{11}$'
     assert re.search(regex, '12345678901') is not None
