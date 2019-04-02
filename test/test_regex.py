@@ -24,6 +24,23 @@ def test_honorific():
     assert re.search(regex, 'Ms._underscore') is None
 
 
+def test_email():
+    """
+    - any alphanumeric, hyphen, dot
+    @
+    - any alphanumeric, hyphen
+    .
+    - any alphabetic
+    """
+    regex = '^([\w\.-]+)@([\w-]+)\.([a-zA-Z]+)$'
+    assert re.search(regex, 'zjv1000@yahoo.com') is not None
+    assert re.search(regex, 'zjv.1000@yahoo.com') is not None
+    assert re.search(regex, 'zjv-1000@yahoo.com') is not None
+    assert re.search(regex, 'zjv1000@yahoo.org') is not None
+    assert re.search(regex, 'zjv1000#yahoo.com') is None
+    assert re.search(regex, 'zjv1000@yahoo.123') is None
+
+
 def test_uk_telephone_num():
     regex = '^\d{11}$'
     assert re.search(regex, '12345678901') is not None
