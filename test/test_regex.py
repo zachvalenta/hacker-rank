@@ -5,6 +5,18 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_match_repetitions():
+    """
+    first 40 - any alphabetic or even num
+    last 5 - odd digits or whitespace char
+    """
+    regex = '^[a-zA-Z|02468]{40}([13579|\s]{5})$'
+    assert re.search(
+        regex, '2222222222aaaaaaaaaa2222222222aaaaaaaaaa13 57') is not None
+    assert re.search(
+        regex, 'x4202v2A22A9a6aaaaaa2G2222m222qwertyYuIo13957') is None
+
+
 def test_honorific():
     regex = '^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$'
     assert re.search(regex, 'Mr.DOSHI') is not None
