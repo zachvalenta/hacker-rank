@@ -5,6 +5,17 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_match_repetitions_specific():
+    """
+    - begin w/ 1 or 2 digits
+    - followed by 3 or more letters
+    - end w/ up to 3 '.'
+    """
+    regex = '^\d{1,2}[a-zA-Z]{3,}\.{0,3}$'
+    assert re.search(regex, '3threeormorealphabets.') is not None
+    assert re.search(regex, '3threeormorealphabets....') is None
+
+
 def test_match_repetitions():
     """
     first 40 - any alphabetic or even num
