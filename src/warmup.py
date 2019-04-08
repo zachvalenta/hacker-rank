@@ -12,7 +12,7 @@ def counting_valleys(s):
     valleys = 0
     for i, v in list(enumerate(s)):
         current_sea_level = sea_level
-        if v == 'U':
+        if v == "U":
             sea_level += 1
         else:
             sea_level -= 1
@@ -51,8 +51,8 @@ def jump_clouds(c):
 def repeated_string(s, n):
     whole = n // len(s)
     remainder = n % len(s)
-    base_count = whole * s.count('a')
-    return base_count + s[:remainder].count('a')
+    base_count = whole * s.count("a")
+    return base_count + s[:remainder].count("a")
 
 
 def sock_merchant(ar):
