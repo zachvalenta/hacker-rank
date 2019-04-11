@@ -5,6 +5,16 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_match_repetitions_zero_or_more():
+    """
+    - begin w/ 2 or more digits
+    - followed by 0 or more lowercase letters
+    - end w/ 0 or more lowercase letters
+    """
+    regex = "^\d{2,}[a-z]*[A-Z]*$"
+    assert re.search(regex, "14") is not None
+
+
 def test_match_repetitions_specific():
     """
     - begin w/ 1 or 2 digits
