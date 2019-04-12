@@ -5,6 +5,16 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_match_repetitions_one_or_more():
+    """
+    - begin w/ 1 or more digits
+    - followed by 1 or more uppercase letters
+    - end w/ 1 or more lowercase letters
+    """
+    regex = "^\d+[A-Z]+[a-z]+$"
+    assert re.search(regex, "1Qa") is not None
+
+
 def test_match_repetitions_zero_or_more():
     """
     - begin w/ 2 or more digits
