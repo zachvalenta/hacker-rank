@@ -29,13 +29,13 @@ fmt:
 lint:
 	flake8 src test
 
-pipfr:
+freeze:
 	pip freeze > requirements.txt
 
-pipin:
+install:
 	pip install -r requirements.txt
 
-piprs:
+reset:
 	@echo "🔍 - DISCOVERING UNSAVED PACKAGES\n"
 	pip freeze > pkgs-to-rm.txt
 	@echo
@@ -50,6 +50,9 @@ piprs:
 	@echo
 	rm pkgs-to-rm.txt
 	@echo
+
+secure:
+	bandit -r src
 
 test:
 	coverage run --source='src' -m pytest -v && coverage report -m
