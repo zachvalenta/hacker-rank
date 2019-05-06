@@ -5,6 +5,17 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_ending_items():
+    """
+    - consist of only lower/uppercase
+    - end in 's'
+    """
+    regex = "^[a-zA-Z]*s$"
+    assert re.search(regex, "Kites") is not None
+    assert re.search(regex, "s") is not None
+    assert re.search(regex, "3ess") is None
+
+
 def test_match_repetitions_one_or_more():
     """
     - begin w/ 1 or more digits
