@@ -5,6 +5,17 @@ https://www.hackerrank.com/domains/regex
 import re
 
 
+def test_word_boundary():
+    """
+    - starts w/ lower/upper vowel
+    - full match only letters
+    - full match can be any length
+    - must start and end w/ word boundary
+    """
+    regex = r"\b[aeiouAEIOU][a-zA-Z]*\b"
+    assert re.search(regex, "Found any match?") is not None
+
+
 def test_ending_items():
     """
     - consist of only lower/uppercase
