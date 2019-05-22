@@ -1,6 +1,6 @@
 # what is this?
 
-* my working through of some Hacker Rank problems
+* Hacker Rank problems + other inteview-style questions
 
 # Hacker Rank particularities
 

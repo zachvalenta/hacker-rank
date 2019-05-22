@@ -1,3 +1,8 @@
+from collections import Counter
+import json
+from os import path
+
+
 def container_ship(cons, stamps):
     """
     consumption = [3, 5, 2, 1]
@@ -18,3 +23,15 @@ def container_ship(cons, stamps):
             current_cost = elapsed_time * x
             total_cost += current_cost
     return total_cost
+
+
+def word_count(version, output=False):
+    basepath = path.dirname(__file__)
+    austen = path.abspath(path.join(basepath, "..", "austen.json"))
+    with open(austen) as f:
+        text = json.load(f)["austen-{}".format(version)]
+        ranked = Counter(text.split()).most_common()
+        if output:
+            print(*ranked, sep="\n")
+        else:
+            return ranked
