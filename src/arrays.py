@@ -11,6 +11,6 @@ def sum_hourglass(arr):
             mid_sum = arr[ind+1][sy+1]
             btm_sum = sum(arr[ind+2][sy:sy+3])
             local_high += top_sum + mid_sum + btm_sum
-            if local_high >= global_high:
+            if (ind == 0 and sy==0) or local_high >= global_high:  # solves if all sums negative
                 global_high = local_high
     return global_high
