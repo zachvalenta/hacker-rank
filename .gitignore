@@ -5,8 +5,9 @@ htmlcov
 # macOS
 .DS_Store
 
-# PyCharm
+# editors
 .idea
+.vscode
 
 # pytest
 .pytest_cache
