@@ -2,25 +2,39 @@
 
 help:
 	@echo
-	@echo "🐛 DEBUG"
+	@echo "🛠 UTILS"
 	@echo
-	@echo "repl:    	debug using bpython"
+	@echo "repl:      open REPL with bpython"
 	@echo
 	@echo "📊 CODE QUALITY"
 	@echo
-	@echo "cov:     	view HTML coverage report in browser"
-	@echo "fmt:     	auto format code using Black"
-	@echo "lint:    	lint using flake8"
-	@echo "test:    	run unit tests, view basic coverage report in terminal"
+	@echo "test:      run unit tests, view basic coverage report in terminal"
+	@echo "cov:       view HTML coverage report in browser"
+	@echo "fmt:       auto-format using Black"
+	@echo "lint:      lint using flake8"
 	@echo
 	@echo "📦 DEPENDENCIES"
 	@echo
-	@echo "freeze:   	freeze dependencies into requirements.txt"
-	@echo "install:   	install dependencies from requirements.txt"
-	@echo "reset:   	remove any installed pkg *not* in requirements.txt"
+	@echo "install:   install dependencies from requirements.txt"
+	@echo "purge:     remove any installed pkg *not* in requirements.txt"
+	@echo "freeze:    freeze dependencies into requirements.txt"
 	@echo
 
-cov:test
+#
+# 🛠 UTILS
+#
+
+repl:
+	source venv/bin/activate; bpython
+
+#
+# 📊 CODE QUALITY
+#
+
+test:
+	coverage run --source='src' -m pytest -v && coverage report -m
+
+cov:
 	coverage html; open htmlcov/index.html
 
 fmt:
@@ -29,13 +43,14 @@ fmt:
 lint:
 	flake8 src test
 
-freeze:
-	pip freeze > requirements.txt
+#
+# 📦 DEPENDENCIES
+#
 
 install:
 	pip install -r requirements.txt
 
-reset:
+purge:
 	@echo "🔍 - DISCOVERING UNSAVED PACKAGES\n"
 	pip freeze > pkgs-to-rm.txt
 	@echo
@@ -51,8 +66,5 @@ reset:
 	rm pkgs-to-rm.txt
 	@echo
 
-secure:
-	bandit -r src
-
-test:
-	coverage run --source='src' -m pytest -v && coverage report -m
+freeze:
+	pip freeze > requirements.txt
