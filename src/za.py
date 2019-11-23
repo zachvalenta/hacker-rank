@@ -34,9 +34,9 @@ def find_longest_substring(query):
     assert scaffold('a') == 1
     assert scaffold('abcdbefghi') == ?
     """
-    current = ''
+    current = ""
     longest = 0
-    for i,v in enumerate(query):
+    for i, v in enumerate(query):
         if i == 0:
             longest = len(current)
             current += v
@@ -45,7 +45,7 @@ def find_longest_substring(query):
                 longest = len(current)
                 current = v
             elif v in current:
-                current = ''
+                current = ""
             else:
                 current += v
     return longest

@@ -8,14 +8,14 @@ def test_container_ship():
 
 
 def test_find_longest_substring():
-    assert find_longest_substring('') == 0
-    assert find_longest_substring('bbbb') == 1
-    assert find_longest_substring('abcabcbb') == 3
-    assert find_longest_substring('pwwkew') == 3
+    assert find_longest_substring("") == 0
+    assert find_longest_substring("bbbb") == 1
+    assert find_longest_substring("abcabcbb") == 3
+    assert find_longest_substring("pwwkew") == 3
 
 
 def test_word_count():
-    most_common = [('of', 12), ('the', 10), ('his', 10), ('and', 9), ('to', 8)]
-    assert word_count(version='ordered')[:5] == most_common
-    assert word_count(version='scrambled')[:5] == most_common
-    assert word_count(version='missing-final-the')[:5] != most_common
+    most_common = [("of", 12), ("the", 10), ("his", 10), ("and", 9), ("to", 8)]
+    assert word_count(version="ordered")[:5] == most_common
+    assert word_count(version="scrambled")[:5] == most_common
+    assert word_count(version="missing-final-the")[:5] != most_common
