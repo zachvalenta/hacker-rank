@@ -2,7 +2,9 @@
 
 help:
 	@echo
-	@echo "🛠 UTILS"
+	@echo "==========================================="
+	@echo
+	@echo "🛠  UTILS"
 	@echo
 	@echo "repl:      open REPL with bpython"
 	@echo
@@ -18,6 +20,8 @@ help:
 	@echo "install:   install dependencies from requirements.txt"
 	@echo "purge:     remove any installed pkg *not* in requirements.txt"
 	@echo "freeze:    freeze dependencies into requirements.txt"
+	@echo
+	@echo "==========================================="
 	@echo
 
 #

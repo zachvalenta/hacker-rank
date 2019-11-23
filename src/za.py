@@ -25,6 +25,32 @@ def container_ship(cons, stamps):
     return total_cost
 
 
+def find_longest_substring(query):
+    """
+    find length of longest substring w/out repeating char
+
+    further cases ⬇️
+
+    assert scaffold('a') == 1
+    assert scaffold('abcdbefghi') == ?
+    """
+    current = ''
+    longest = 0
+    for i,v in enumerate(query):
+        if i == 0:
+            longest = len(current)
+            current += v
+        else:
+            if v in current and len(current) > longest:
+                longest = len(current)
+                current = v
+            elif v in current:
+                current = ''
+            else:
+                current += v
+    return longest
+
+
 def word_count(version, output=False):
     basepath = path.dirname(__file__)
     austen = path.abspath(path.join(basepath, "..", "austen.json"))
